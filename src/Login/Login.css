@@ -1,6 +1,35 @@
 .login-pg{
     width: 100vw;
     height: calc(100vh - 190px);
+    .header{
+        display: flex;
+        
+        .header-bg {
+            width: 100px;
+            height: 160px;
+            background: linear-gradient(to right, #6d011e, #a81e42);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
+          
+        }
+        .header-bg-off{
+            display: flex;
+            justify-content: end;
+            width: 330px;
+            height: 160px;
+            background: linear-gradient(to right, #a81e42, hsl(344, 65%, 41%));
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+           
+        }
+    }
+    .header-content{
+        color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 3em;
+        left: 6em;
+    }
     .login-sec{
         width: 100%;
         padding: 2em;
@@ -44,6 +73,7 @@
            border-radius: 10px;
            background-color: var(--red);
            color: white;
+           cursor: pointer;
         }
        } 
        .or{
@@ -63,12 +93,15 @@
         .google-div{
             display: flex;
             align-items: center;
+            justify-content: center;
+            
             gap: 1em;
             background-color: #4285F4;
-            padding: 0.25em;
+            padding: 0.5em;
             color: white;
             border-radius: 10px;
-            /* padding-left: 1em; */
+           
+            cursor: pointer;
         }
     }
     }

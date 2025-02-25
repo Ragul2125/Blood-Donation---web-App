@@ -2,17 +2,27 @@ import React from "react";
 import './Login.css'
 import logo from '../assets/logo1.png';
 import google from '../assets/google.svg'
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const Navigate = useNavigate()
+  const handlelogin =()=>{
+    Navigate("/dashboard")
+  }
+  const handlecreate =()=>{
+    Navigate("/signup")
+  }
   return (
     <main className="login-pg">
       <header className="header">
+        
         <div className="header-bg"></div>
         <div className="header-bg-off"></div>
       </header>
-      {/* <div className="logo">
-        <img src={logo} alt="logo" />
-      </div> */}
+      <div className="header-content">
+        <p>Login to continue</p>
+        <h1>Welcome Back</h1>
+      </div>
       <div className="login-sec">
         <div className="input-field">
           <label>Email</label>
@@ -28,7 +38,7 @@ const Login = () => {
           <p>Forget Password?</p>
         </div>
         <div className="login-btn">
-            <button>Login </button>
+            <button onClick={handlelogin}>Login </button>
         </div>
         <div className="or">
           <div className="left"></div>
@@ -36,13 +46,10 @@ const Login = () => {
           <div className="right"></div>
         </div>
         <div className="google">
-          <div className="google-div">
-            <img src={google} alt="google" />
-            <h4>Signin with google </h4>
+          <div className="google-div" onClick={handlecreate}>
+            <h4>Create Account</h4>
           </div>
-          <div className="face-book">
-            <img src="" alt="" />
-          </div>
+          
         </div>
       </div>
     </main>
