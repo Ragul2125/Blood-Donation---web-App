@@ -1,0 +1,64 @@
+.createaccnt-pg{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    display: flex;
+    
+    .header-bg {
+        width: 100px;
+        height: 160px;
+        background: linear-gradient(to right, #6d011e, #a81e42);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
+      
+    }
+    .header-bg-off{
+        display: flex;
+        justify-content: end;
+        width: 330px;
+        height: 160px;
+        background: linear-gradient(to right, #a81e42, hsl(344, 65%, 41%));
+        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+       
+    }
+}
+.header-content{
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+   
+    top: 3em;
+    left: 2em;
+}
+.input-sec{
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    .inputs{
+        width: 100%;
+        input{
+            width: 100%;
+            padding: 1em;
+            background-color: rgb(226, 223, 223);
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+    }
+    button{
+        width: 100%;
+        background-color: #6d011e;
+        color: white;
+        padding: 1em;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+}

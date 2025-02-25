@@ -1,16 +1,19 @@
 import "./App.css";
 import BottomNav from "./Bottom/BottomNav";
-import Emergency from "./Emergency/Emergency";
 import Login from "./Login/Login";
-import Profile from "./Profile/Profile";
+ import Dashboard from './Dashboard/Layout.jsx'
+import Signup from './Signup/Signup.jsx'
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 function App() {
   return (
-    <>
-     <Emergency/>
-     {/* <Profile/> */}
-     {/* <Login/> */}
-      <BottomNav />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup/*" element={<Signup/>}/>
+        <Route path="/dashboard/*" element={<Dashboard/>}/>
+      </Routes>
+    </Router>
   );
 }
 
