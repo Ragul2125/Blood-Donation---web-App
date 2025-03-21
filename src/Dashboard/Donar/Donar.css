@@ -49,7 +49,7 @@
       padding-bottom: 2.5em;
       margin-bottom: 3em;
       .Donar-req-cards {
-        width: 100%;
+        width: 90%;
         background-color: #ffffff;
         padding: 2em;
         border-radius: 10px;
@@ -163,7 +163,7 @@
       }
     }
     .container-fields:last-child {
-      margin-bottom: 5em;
+      margin-bottom: 6em;
       /* background-color: #a81e42; */
     }
   }
