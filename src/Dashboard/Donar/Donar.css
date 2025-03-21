@@ -1,6 +1,6 @@
 .emergency-main {
   width: 100dvw;
-  height: calc(100dvh - 190px);
+  height: 100dvh;
   background-color: #f9f9f9;
   padding-bottom: 2em;
   overflow: hidden;
