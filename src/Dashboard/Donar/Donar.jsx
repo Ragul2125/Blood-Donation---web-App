@@ -1,84 +1,131 @@
-import React from 'react';
-import { FiPhoneCall } from "react-icons/fi";
-import './Donar.css';
-import Matti from '../../assets/matti.png'
-const DonorDetails = () => {
-  // Static header for donor details.
-  const headerText = "Donor Details";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import "./Donar.css";
+import header from "../../assets/header-img.svg";
+import grp from "../../assets/bld-grp.svg";
+import profile from "../../assets/profile.avif";
 
-  // Array storing unique donor details.
-  const donorDetails = [
-    {
-      id: 1,
-      name: "John Doe",
-      phone: "123-456-7890",
-      image: Matti,
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      phone: "987-654-3210",
-      image: Matti,
-    },
-    {
-      id: 3,
-      name: "Alice Johnson",
-      phone: "555-123-4567",
-      image: Matti,
-    },
-    {
-      id: 4,
-      name: "Michael Brown",
-      phone: "444-987-6543",
-      image: Matti,
-    },
-    {
-      id: 5,
-      name: "Emily Davis",
-      phone: "333-222-1111",
-      image: Matti,
-    },
-    {
-      id: 6,
-      name: "William Garcia",
-      phone: "222-333-4444",
-      image: Matti,
-    },
-    {
-      id: 7,
-      name: "Olivia Martinez",
-      phone: "777-888-9999",
-      image: Matti,
-    }
+const DonorDetails = () => {
+  const location = useLocation();
+  const isDonorPage = location.pathname.includes("donars"); 
+
+  // Title dynamically set
+  const headerText = isDonorPage ? "Donars" : "Receivers";
+
+  // Donor Data
+  const donorData = [
+    { id: 1, name: "Mahesh", bloodType: "A+", health: "Recent Surgery", age: 25, weight: "70Kg", availability: "Till April 2025" },
+    { id: 2, name: "Ravi", bloodType: "O+", health: "Healthy", age: 30, weight: "75Kg", availability: "Anytime" }
   ];
 
+  // Receiver Data
+  const receiverData = [
+    { id: 1,name:"Mahesh", bloodType: "B-", quantity: "2 Units", location: "Chennai", contact: "+91 9876543210", patientCondition: "Critical Condition" },
+    { id: 2, name:"Mahesh",bloodType: "AB+", quantity: "1 Unit", location: "Bangalore", contact: "+91 8765432109", patientCondition: "Stable Condition" }
+  ];
+
+  // Select correct data
+  const cardData = isDonorPage ? donorData : receiverData;
+
   return (
-    <main className='emergency-main'>
-      <header>
-        <h3>{headerText}</h3>
+    <main className="emergency-main">
+      <header className="header-pg">
+        <div className="header-top">
+          <h2>{headerText}</h2>
+          <img src={header} alt="Header" />
+        </div>
       </header>
+
       <div className="container">
-        {donorDetails.map(donor => (
-          <div className="container-fields" key={donor.id}>
-            <div className="img">
-              <img src={donor.image} alt={donor.name} />
-            </div>
-            <div className="content">
-              <div className="content-name">
-                {donor.name}
+        <div className="donar-req-conatiner">
+          {cardData.map((item) => (
+            <div key={item.id} className="Donar-req-cards">
+              
+              {/* Donor Card Layout */}
+              {isDonorPage ? (
+                <>
+                  <div className="Donar-req-cards-header">
+                    <div className="Donar-req-cards-header-profile">
+                      <img src={profile} alt="Profile" />
+                    </div>
+                    <div className="Donar-req-cards-header-bloodgrp">
+                      <img src={grp} alt="Blood Group" />
+                      <h4>{item.bloodType}</h4>
+                    </div>
+                  </div>
+                  
+                  <div className="Donar-req-cards-body">
+                    <div className="Donar-req-cards-body-name">
+                      <h3>{item.name}</h3>
+                    </div>
+                    <div className="Donar-req-cards-body-content">
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Health Status :</p>
+                        <p className="val">{item.health}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Age :</p>
+                        <p className="val">{item.age}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Weight :</p>
+                        <p className="val">{item.weight}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Availability :</p>
+                        <p className="val">{item.availability}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                /* Receiver Card Layout */
+                <>
+                  <div className="Donar-req-cards-header">
+                  <div className="Donar-req-cards-header-profile">
+                      <img src={profile} alt="Profile" />
+                    </div>
+                    <div className="Donar-req-cards-header-bloodgrp">
+                      <img src={grp} alt="Blood Group" />
+                      <h4>{item.bloodType}</h4>
+                    </div>
+                  </div>
+
+                  <div className="Donar-req-cards-body">
+                  <div className="Donar-req-cards-body-name">
+                      <h3>{item.name}</h3>
+                    </div>
+                    <div className="Donar-req-cards-body-content">
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Blood Quantity :</p>
+                        <p className="val">{item.quantity}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Location :</p>
+                        <p className="val">{item.location}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Contact :</p>
+                        <p className="val">{item.contact}</p>
+                      </div>
+                      <div className="Donar-req-cards-body-content-row">
+                        <p>Patient Condition :</p>
+                        <p className="val">{item.patientCondition}</p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              <div className="Donar-req-cards-btn">
+                <button>Contact</button>
               </div>
-              <div className="no">
-                {donor.phone}
-              </div>
             </div>
-            <div className="call">
-              <FiPhoneCall />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );
-}
+};
 
 export default DonorDetails;

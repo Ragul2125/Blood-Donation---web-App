@@ -1,57 +1,78 @@
-import React from 'react'
-import './Donate.css'
-import { useState } from 'react';
-import { BsDropletFill } from "react-icons/bs";
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { IoChevronBack } from "react-icons/io5";
+import ProfileImg from "../../assets/profileImg.svg";
+import { FaRegBell } from "react-icons/fa";
+import { HiMenuAlt1 } from "react-icons/hi";
+import "./Donate.css";
+import { Outlet, useNavigate } from "react-router-dom";
 const Donate = () => {
-  const [selectedGroup, setSelectedGroup] = useState(null);
-  const bloodGroups = ["A+", "O-", "B-", "A-", "AB-", "AB+", "O+", "B+"];
-  const Navigate=useNavigate()
-  const handleNavigate=()=>{
-    Navigate("/dashboard/donars")
-  }
+  const Navigate = useNavigate();
+  const handleDonate = () => {
+    Navigate("success");
+  };
   return (
-    <>
-                  <div className='Donate-pg'>
-                      <h2>Donate Blood</h2>
-                      <div className='b-group'>
-                          <div className='b-title'>
-                              <h4><BsDropletFill /> Blood Group*</h4>
-                          </div>
-                          <div className='groups'>
-                              {bloodGroups.map((group, index) => (
-                                  <div 
-                                      key={index} 
-                                      className={`blood-group ${selectedGroup === group ? 'selected' : ''}`} 
-                                      onClick={() => setSelectedGroup(group)}
-                                  >
-                                      <h2>{group}</h2>
-                                  </div>
-                              ))}
-                          </div>
-                      </div>
-                      <div className='information-sec'>
-                          <div className='location'>
-                              <h4>Quantity</h4>
-                              <input type='number' placeholder='Quantity' />
-                          </div>
-                          <div className='location'>
-                              <h4>Contact Information</h4>
-                              <input type='text' placeholder='Contact Information' />
-                          </div>
-                          {/* <div className='location '>
-                              <h4>Patient Information</h4>
-                              <input type='text' placeholder='Information' />
-                          </div>
-                          <div className='location'>
-                              <h4>Reason</h4>
-                              <input type='text' placeholder='Reason' />
-                          </div> */}
-                      </div>
-                      <button onClick={handleNavigate}>Donate</button>
-                  </div>
-    </>
-  )
-}
+    <div className="donate-main">
+      <div className="donate-pg">
+        <div className="donate-pg-content">
+          <div className="title">
+            <h2>Donate</h2>
+          </div>
+          <div className="donate-details">
+            <div className="input-1">
+              Write Your Full Name
+              <input type="text" placeholder="Your name here" />
+            </div>
+            <div className="input-1">
+              Blood Type
+              <input type="text" placeholder="Blood Type...." />
+            </div>
+            <div className="input-1">
+              Health Status
+              <input type="text" placeholder="recent Surgery,allergy,vaccine" />
+            </div>
+            <div className="input-1">
+              Last Donation Date
+              <input type="date" placeholder="Select Date" />
+            </div>
+            <div className="input-1">
+              Availability
+              <input
+                type="text"
+                placeholder="eg, Dhaka City,till january 2025"
+              />
+            </div>
+            <div className="two-inputs">
+              <div className="input-6">
+                Weight
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  min="1"
+                  max="120"
+                  placeholder="Enter your age"
+                ></input>
+              </div>
+              <div className="input-6">
+                Age
+                <input
+                  type="number"
+                  id="weight"
+                  name="weight"
+                  min="1"
+                  max="300"
+                  step="0.1"
+                  placeholder="Enter your weight"
+                ></input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button onClick={handleDonate} className="btn">Proceed To Donate</button>
+      </div>
+      <Outlet />
+    </div>
+  );
+};
 
-export default Donate
+export default Donate;

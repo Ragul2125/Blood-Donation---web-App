@@ -19,6 +19,9 @@
     align-items: center;
     color: gray;
     cursor: pointer;
+    span{
+      font-size: 0.9em;
+    }
   }
   
   .nav-item.active {

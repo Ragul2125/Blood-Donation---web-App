@@ -10,6 +10,7 @@ import bank from "../../assets/blood-bank.svg"
 import gif from "../../assets/cardgif.svg"
 import call from "../../assets/call.svg"
 import map from "../../assets/map.svg"
+import header from "../../assets/header-img.svg";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
@@ -38,10 +39,11 @@ const Home = () => {
         <div className="profile">
           <img src={profileImg} alt="" />
           <div className="profile-content">
-          <p className="name">Jenillia</p>
-          <p>Dontar</p>
+          <p className="name">Welcome back,</p>
+          <p>Jenillia</p>
           </div>
         </div>
+        <img src={header} alt="" className="headerimg"/>
         <div className="notification">
           <MdNotificationsActive />
         </div>
@@ -80,9 +82,7 @@ const Home = () => {
           <p className="icons"><img src={hosp} alt="hosp" /></p>
           <h3>Hospital</h3>
           </div>
-          <div className="dash-card" onClick={handleMap}><p className="icons"><img src={map} alt="map" /></p>
-          <h3>Map</h3></div>
-          <div className="dash-card" onClick={handleEmergency}><p className="icons"><img src={call} alt="call" /></p>
+          <div className="dash-card " onClick={handleEmergency}><p className="icons"><img src={call} alt="call" /></p>
           <h3>Emergency Number</h3></div>
 
         </div>

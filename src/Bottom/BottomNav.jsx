@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineEditCalendar } from "react-icons/md";
-import { CiDroplet } from "react-icons/ci";
+import { PiDropSimpleBold } from "react-icons/pi";
+import { TbDropletPlus } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
 import { BiDonateBlood } from "react-icons/bi";
 import "./BottomNav.css";
@@ -18,17 +19,17 @@ const BottomNavBar = () => {
 
   const handleEvent = () => {
     setActiveNav("event");
-    navigate("/dashboard/event");
+    navigate("/dashboard/events");
   };
 
   const handleDonate = () => {
-    setActiveNav("donate");
-    navigate("/dashboard/donate");
+    setActiveNav("donars");
+    navigate("/dashboard/donars");
   };
 
   const handleRecieve = () => {
     setActiveNav("recieve");
-    navigate("/dashboard/request");
+    navigate("/dashboard/requested");
   };
 
   const handleProfile = () => {
@@ -38,20 +39,20 @@ const BottomNavBar = () => {
 
   return (
     <div className="bottom-nav-container">
-      <div className={`nav-item ${activeNav === "home" ? "active" : ""}`}>
-        <IoHomeOutline size={24} onClick={handleHome} />
-        <span>Home</span>
+      <div className={`nav-item ${activeNav === "donars" ? "active" : ""}`}>
+        <TbDropletPlus size={24}  onClick={handleDonate} />
+        <span>Donars</span>
       </div>
       <div className={`nav-item ${activeNav === "event" ? "active" : ""}`}>
         <MdOutlineEditCalendar size={24} onClick={handleEvent} />
         <span>Event</span>
       </div>
       <div className="nav-item center-button">
-        <CiDroplet size={24} className="plus-icon" onClick={handleDonate} />
+        <IoHomeOutline size={24} className="plus-icon" onClick={handleHome} />
       </div>
       <div className={`nav-item ${activeNav === "recieve" ? "active" : ""}`}>
         <BiDonateBlood size={24} onClick={handleRecieve} />
-        <span>Recieve</span>
+        <span>Requested</span>
       </div>
       <div className={`nav-item ${activeNav === "profile" ? "active" : ""}`}>
         <GoPerson size={24} onClick={handleProfile} />

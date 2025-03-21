@@ -52,8 +52,8 @@
                 width: 100%;
                 padding: 0.5em 0.3em;
                 border-radius: 10px;
-                border: 1px solid var(--grey);
-                opacity: 0.2;
+                border: 1px solid rgba(128, 128, 128, 0.369);
+                
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
                 input{
                     outline: none;

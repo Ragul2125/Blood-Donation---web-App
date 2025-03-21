@@ -1,27 +1,23 @@
 .home-pg {
-  width: 100vw;
-  height: calc(100vh - 190px);
-  background-color: #b92a2a;
+  width: 100dvw;
+  height: calc(100dvh - 180px);
+  
   header {
-    background: rgb(70, 5, 45);
-    background: linear-gradient(
-      90deg,
-      rgba(70, 5, 45, 1) 0%,
-      rgba(70, 5, 45, 1) 14%,
-      rgba(80, 7, 50, 1) 28%,
-      rgba(84, 8, 50, 1) 45%,
-      rgba(94, 9, 51, 1) 55%,
-      rgba(106, 11, 55, 1) 65%,
-      rgba(97, 8, 52, 1) 68%,
-      rgba(153, 23, 71, 1) 78%,
-      rgba(179, 35, 70, 1) 100%
-    );
+    background: linear-gradient(to right, #450013, #a81e42);
     width: 100%;
     height: 25%;
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
     padding-top: 1em;
+    
+    .headerimg{
+      
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 150px;
+    }
     .profile {
       display: flex;
       color: white;
@@ -29,6 +25,7 @@
       height: 100%;
       gap: 1em;
       cursor: pointer;
+      z-index: 111;
       img {
         width: 50px;
         height: 50px;
@@ -37,7 +34,7 @@
       .profile-content{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
         .name{
         
             font-size: large;
@@ -57,13 +54,14 @@
       border-radius: 50%;
       font-size: 1.5em;
       cursor: pointer;
+      z-index: 111;
     }
   }
   .container {
     width: 100%;
-    height: 88%;
+    height: 100%;
     background-color: #f9f9f9;
-    margin-top: -2em;
+    margin-top: -1em;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     padding: 1em;
@@ -127,15 +125,17 @@
     }
     .dash-cards {
       width: 100%;
-      height: 80%;
+      height: 70%;
       display: flex;
+      /* justify-content: space-around; */
       flex-wrap: wrap;
-      padding: 0.5em;
+      /* padding: 0.5em; */
       gap: 0.5em;
       /* background-color: aqua; */
       overflow: scroll;
-      padding-bottom: 5em;
+      /* padding-bottom: 2em; */
       margin-top: 1em;
+      
       .dash-card {
         min-width: 48.7%;
         max-width: 48%;
@@ -144,11 +144,13 @@
         border-radius: 15px;
         padding: 1em;
         display: flex;
+
         align-items: center;
         justify-content: center;
         cursor: pointer;
         gap: 1em;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        
         .icons {
           font-size: 3em;
         }
@@ -160,6 +162,7 @@
       }
       .dash-card:last-child{
         margin-bottom: 3em;
+        min-width: 100%;
       }
     }
   }

@@ -1,7 +1,7 @@
 .profile-main{
-    width: 100vw;
-    height: 100vh;
-    /* height: calc(100vh - 190px); */
+    width: 100dvw;
+    /* height: 100vh; */
+    height: calc(100dvh - 190px);
     background-color: #F9F9F9;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -10,7 +10,7 @@
         height: 250px;
         border-bottom-right-radius: 40px;
         border-bottom-left-radius: 40px;
-        background-color: #5E0933;
+        background: linear-gradient(to right, #520116, #a81e42);
         display: flex;
         justify-content: end;
         .header-top{
@@ -53,7 +53,7 @@
                     align-items: center;
                     justify-content: space-between ;
                     .edit{
-                        background-color: #5E0933;
+                        background-color:var(--red);
                         color: white;
                         padding: 0.4em 1em;
                         border-radius: 10px;

@@ -3,7 +3,8 @@
     flex-direction: column;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 190px);
+
 }
 .header{
     display: flex;
@@ -42,13 +43,15 @@
     gap: 25px;
     .inputs{
         width: 100%;
+        
         input{
             width: 100%;
             padding: 1em;
-            background-color: rgb(226, 223, 223);
-            border: none;
-            outline: none;
-            border-radius: 5px;
+            background-color: #ffffff;
+            border: 1px solid rgba(128, 128, 128, 0.369);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 10px;
+            
         }
     }
     button{
@@ -58,7 +61,7 @@
         padding: 1em;
         outline: none;
         border: none;
-        border-radius: 5px;
+        border-radius: 10px;
         margin-top: 5px;
     }
 }

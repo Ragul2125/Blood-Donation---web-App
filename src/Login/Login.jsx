@@ -27,13 +27,13 @@ const Login = () => {
         <div className="input-field">
           <label>Email</label>
           <div className="input">
-          <input type="text" />
+          <input type="text" placeholder="Enter your Email"/>
           </div>
         </div>
         <div className="input-field">
           <label>Password</label>
           <div className="input">
-          <input type="text" />
+          <input type="text" placeholder="Enter your Password"/>
           </div>
           <p>Forget Password?</p>
         </div>
@@ -47,7 +47,7 @@ const Login = () => {
         </div>
         <div className="google">
           <div className="google-div" onClick={handlecreate}>
-            <h4>Create Account</h4>
+            <h4>Sign Up</h4>
           </div>
           
         </div>

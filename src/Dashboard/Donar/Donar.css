@@ -1,76 +1,167 @@
 .emergency-main {
-    width: 100vw;
-    height: calc(100vh - 190px);
-    background-color: #f9f9f9;
-    /* padding: 1em;         */
-    padding-bottom: 2em;
-    header {
-      padding-left: 1em;
-      background: rgb(70, 5, 45);
-      background: linear-gradient(
-        90deg,
-        rgba(70, 5, 45, 1) 0%,
-        rgba(70, 5, 45, 1) 14%,
-        rgba(80, 7, 50, 1) 28%,
-        rgba(84, 8, 50, 1) 45%,
-        rgba(94, 9, 51, 1) 55%,
-        rgba(106, 11, 55, 1) 65%,
-        rgba(97, 8, 52, 1) 78%,
-        rgba(153, 23, 71, 1) 88%,
-        rgba(179, 35, 70, 1) 100%
-      );
-      color: white;
-      height: 6em;
-      display: flex;
-      align-items: center;
-      h2 {
-        padding-left: 0.5em;
-      }
+  width: 100vw;
+  height: calc(100vh - 190px);
+  background-color: #f9f9f9;
+  padding-bottom: 2em;
+  overflow: hidden;
+  header {
+    padding-left: 1em;
+    background: linear-gradient(to right, #520116, #a81e42);
+    color: white;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: start;
+    padding: 2em 1em;
+    h2 {
+      padding-left: 0.5em;
+      z-index: 111;
     }
-    .container {
-      width: 100%;
-      height: 90%;
-      overflow: scroll;
-      /* background-color: aqua; */
-      padding: 0em 1em;
-      padding-bottom: 1em;
-      /* overflow-y: scroll; */
-      .container-fields {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #ffffff;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        border-radius: 20px;
-        padding: 1em;
-        margin-top: 1em;
-        .img {
-          img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-          }
-        }
-        .content {
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          padding: 0em 1em;
-          text-wrap: wrap;
-        }
-        .call {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-width: 70px;
-          height: 50px;
-          font-size: 2em;
-          background-color: var(--red);
-          color: #ffffff;
-          border-radius: 10px;
-          font-size: 1.3em;
-        }
-      }
+    img {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 150px;
     }
   }
-  
+  .container {
+    width: 100%;
+    height: 90%;
+    overflow: scroll;
+    margin-top: -1.5em;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: #ffffff;
+    padding: 0em 1em;
+    padding-bottom: 1em;
+    /* overflow-y: scroll; */
+    z-index: 10;
+
+    /* =======================Donar-req-pg========================= */
+    .donar-req-conatiner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
+      padding-top: 1.5em;
+      overflow: scroll;
+      padding-bottom: 2.5em;
+      .Donar-req-cards {
+        width: 90%;
+        background-color: #ffffff;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        .Donar-req-cards-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .Donar-req-cards-header-profile {
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+            }
+          }
+          .Donar-req-cards-header-bloodgrp {
+            position: relative;
+            top: 0;
+            /* background-color: #520116; */
+            img {
+              width: 50px;
+            }
+            h4 {
+              position: absolute;
+              top: 0.8em;
+              left: 1em;
+            }
+          }
+        }
+        .Donar-req-cards-body {
+          .Donar-req-cards-body-content {
+            width: 100%;
+            height: 120px;
+            overflow: scroll;
+            background-color: rgb(185, 192, 201,0.3);
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            padding: 1em;
+            border-radius: 10px;
+            
+            .Donar-req-cards-body-content-row {
+              display: flex;
+              padding-bottom: 0.4em;
+              .val {
+                padding-left: 0.25em;
+                width: 50%;
+                text-wrap: wrap;
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+        .Donar-req-cards-btn {
+          display: flex;
+          width: 100%;
+          justify-content: end;
+          margin-top: -1.25em;
+          margin-left: 1em;
+          button {
+            padding: 0.8em;
+            background-color: var(--red);
+            width: 80px;
+            border-radius: 10px;
+            color: #ffffff;
+            outline: none;
+            border: none;
+            z-index: 11;
+          }
+        }
+      }
+    }
+    /* -----------------------em-no-------------------------------- */
+    .container-fields {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 20px;
+      padding: 1em;
+      margin-top: 1em;
+      .left-con {
+        display: flex;
+        align-items: center;
+      }
+      .img {
+        img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 0em 1em;
+        text-wrap: wrap;
+      }
+      .call {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 70px;
+        height: 50px;
+        font-size: 2em;
+        background-color: var(--red);
+        color: #ffffff;
+        border-radius: 10px;
+        font-size: 1.3em;
+      }
+    }
+    .container-fields:last-child {
+      margin-bottom: 3em;
+    }
+  }
+}
