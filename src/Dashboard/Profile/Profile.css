@@ -1,7 +1,7 @@
 .profile-main{
     width: 100dvw;
-    /* height: 100vh; */
-    height: calc(100dvh - 190px);
+    height: 100dvh;
+    /* height: ; */
     background-color: #F9F9F9;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -13,6 +13,7 @@
         background: linear-gradient(to right, #520116, #a81e42);
         display: flex;
         justify-content: end;
+        
         .header-top{
             height: 100px;
             width: 230px;
@@ -48,6 +49,7 @@
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                 padding: 1.5em;
                 /* overflow-y: scroll; */
+                
                 .info-header{
                     display: flex;
                     align-items: center;

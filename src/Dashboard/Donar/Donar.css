@@ -47,12 +47,14 @@
       padding-top: 1.5em;
       overflow: scroll;
       padding-bottom: 2.5em;
+      margin-bottom: 3em;
       .Donar-req-cards {
-        width: 90%;
+        width: 100%;
         background-color: #ffffff;
         padding: 2em;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+       
         .Donar-req-cards-header {
           display: flex;
           align-items: center;
@@ -161,7 +163,8 @@
       }
     }
     .container-fields:last-child {
-      margin-bottom: 3em;
+      margin-bottom: 5em;
+      /* background-color: #a81e42; */
     }
   }
 }

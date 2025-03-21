@@ -1,7 +1,7 @@
 .event-pg{
     gap: 10px;
-    width: 100vw;
-    height: calc(100vh - 190px);
+    width: 100dvw;
+    height: 100dvh;
     /* overflow: scroll; */
     
     header{
@@ -59,7 +59,7 @@
             
             /* background-color: aquamarine; */
             .featured{
-                padding-bottom: 2em;
+                padding-bottom: 6em;
             }
             .upcoming,.featured{
                 width: 100%;

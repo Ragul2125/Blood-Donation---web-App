@@ -9,6 +9,7 @@
         align-items: center;
         gap: 2em;
         overflow:scroll;
+        
         .donate-pg-content{
             width: 100%;
             display: flex;

@@ -1,6 +1,6 @@
 .Request-pg{
     width: 100dvw;
-    height: calc(100vh - 190px);
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +64,7 @@
         color: white;
         border-radius: 10px;
         cursor: pointer;
+        margin-bottom: 6em;
     }
 }
 .blood-group:hover {
